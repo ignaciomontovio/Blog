@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -28,10 +29,12 @@ public class Post {
 	private Date fechaDeCreacion;
 	
 	@ManyToOne
-	private Long idUsuario;
+	@JoinColumn(name="usuario_id")
+	private Usuario usuario;
 	
 	@ManyToOne
-	private Long idCategoria;
+	@JoinColumn(name="categoria_id")
+	private Categoria categoria;
 
 	public Long getId() {
 		return id;
@@ -73,21 +76,22 @@ public class Post {
 		this.fechaDeCreacion = fechaDeCreacion;
 	}
 
-	public Long getIdUsuario() {
-		return idUsuario;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setIdUsuario(Long idUsuario) {
-		this.idUsuario = idUsuario;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
-	public Long getIdCategoria() {
-		return idCategoria;
+	public Categoria getCategoria() {
+		return categoria;
 	}
 
-	public void setIdCategoria(Long idCategoria) {
-		this.idCategoria = idCategoria;
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
 
+	
 	
 }
