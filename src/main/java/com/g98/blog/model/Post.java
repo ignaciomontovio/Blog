@@ -11,7 +11,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 @Entity
+@CrossOrigin("*")
 @Table(name = "Post")
 public class Post {
 	
@@ -19,22 +22,22 @@ public class Post {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Long id;
-	@Column(name = "titulo")
-	private String titulo;
-	@Column(name = "contenido")
-	private String contenido;
-	@Column(name = "imagen")
-	private String imagen;
-	@Column(name = "fechaDeCreacion")
-	private Date fechaDeCreacion;
+	@Column(name = "title")
+	private String title;
+	@Column(name = "content")
+	private String content;
+	@Column(name = "image")
+	private String image;
+	@Column(name = "creationDate")
+	private Date creationDate;
 	
 	@ManyToOne
-	@JoinColumn(name="usuario_id")
-	private Usuario usuario;
+	@JoinColumn(name="user_id")
+	private User user;
 	
 	@ManyToOne
-	@JoinColumn(name="categoria_id")
-	private Categoria categoria;
+	@JoinColumn(name="categoy_id")
+	private Category category;
 
 	public Long getId() {
 		return id;
@@ -44,54 +47,53 @@ public class Post {
 		this.id = id;
 	}
 
-	public String getTitulo() {
-		return titulo;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public String getContenido() {
-		return contenido;
+	public String getContent() {
+		return content;
 	}
 
-	public void setContenido(String contenido) {
-		this.contenido = contenido;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
-	public String getImagen() {
-		return imagen;
+	public String getImage() {
+		return image;
 	}
 
-	public void setImagen(String imagen) {
-		this.imagen = imagen;
+	public void setImage(String image) {
+		this.image = image;
 	}
 
-	public Date getFechaDeCreacion() {
-		return fechaDeCreacion;
+	public Date getCreationDate() {
+		return creationDate;
 	}
 
-	public void setFechaDeCreacion(Date fechaDeCreacion) {
-		this.fechaDeCreacion = fechaDeCreacion;
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
 	}
 
-	public Usuario getUsuario() {
-		return usuario;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public Categoria getCategoria() {
-		return categoria;
+	public Category getCategory() {
+		return category;
 	}
 
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
-	
 	
 }
