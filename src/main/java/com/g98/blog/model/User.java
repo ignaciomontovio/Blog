@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @Entity
 @CrossOrigin("*")
-@Table(name = "Usuario")
+@Table(name = "User")
 public class User {
 
 	@Id
@@ -21,6 +21,17 @@ public class User {
 	private String email;
 	@Column(name = "password")
 	private String password;
+	
+	
+	
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public User(Long id) {
+		super();
+		this.id = id;
+	}
 	public Long getId() {
 		return id;
 	}

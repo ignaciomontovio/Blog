@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @Entity
 @CrossOrigin("*")
-@Table(name = "Categoria")
+@Table(name = "Category")
 public class Category {
 
 	@Id
@@ -20,6 +20,16 @@ public class Category {
 	private Long id;
 	@Column(name = "name")
 	private String name;
+
+	
+	public Category() {
+		super();
+	}
+
+	public Category(Long id) {
+		super();
+		this.id = id;
+	}
 
 	public Long getId() {
 		return id;

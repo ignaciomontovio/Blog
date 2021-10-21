@@ -1,5 +1,8 @@
 package com.g98.blog.model;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -38,6 +41,23 @@ public class Post {
 	@ManyToOne
 	@JoinColumn(name="categoy_id")
 	private Category category;
+
+
+	
+	public Post() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Post(String title, String content, String image, User user, Category category) {
+		super();
+		this.title = title;
+		this.content = content;
+		this.image = image;
+		this.creationDate =  Calendar.getInstance().getTime();
+		this.user = user;
+		this.category = category;
+	}
 
 	public Long getId() {
 		return id;

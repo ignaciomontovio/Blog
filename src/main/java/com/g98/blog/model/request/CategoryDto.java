@@ -1,9 +1,11 @@
-package com.g98.blog.model.dto;
+package com.g98.blog.model.request;
 
 public class CategoryDto{
 
 	private String name;
 
+	
+	
 	public String getName() {
 		return name;
 	}

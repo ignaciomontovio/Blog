@@ -1,6 +1,6 @@
-package com.g98.blog.model.dto;
+package com.g98.blog.model.request;
 
-public class UsuarioDto {
+public class UserDto {
 
 	private String email;
 	private String password;

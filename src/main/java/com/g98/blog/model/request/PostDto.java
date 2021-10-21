@@ -1,13 +1,23 @@
-package com.g98.blog.model.dto;
+package com.g98.blog.model.request;
 
 public class PostDto {
 
 	private String title;
 	private String content;
 	private String image;
-	private String creationDate;
 	private Long idUser;
 	private Long idCategory;
+	
+	
+	
+	public PostDto(String title, String content, String image,  Long idUser, Long idCategory) {
+		super();
+		this.title = title;
+		this.content = content;
+		this.image = image;
+		this.idUser = idUser;
+		this.idCategory = idCategory;
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -25,12 +35,6 @@ public class PostDto {
 	}
 	public void setImage(String image) {
 		this.image = image;
-	}
-	public String getCreationDate() {
-		return creationDate;
-	}
-	public void setCreationDate(String creationDate) {
-		this.creationDate = creationDate;
 	}
 	public Long getIdUser() {
 		return idUser;
