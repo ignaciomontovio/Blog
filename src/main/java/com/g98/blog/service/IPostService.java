@@ -21,6 +21,6 @@ public interface IPostService {
 
 	List<Post> getPostsByCategory(Long category);
 
-	Object getPostsByTitleAndCategory(String title, Long category);
+	List<Post> getPostsByTitleAndCategory(String title, Long category);
 
 }

@@ -82,8 +82,8 @@ public class PostServiceImpl implements IPostService{
 	}
 
 	@Override
-	public Object getPostsByTitleAndCategory(String title, Long category) {
+	public List<Post> getPostsByTitleAndCategory(String title, Long category) {
 		List<Post> posts = postRepo.findAllByTitleAndCategory(title,category);
-		return null;
+		return posts;
 	}
 }

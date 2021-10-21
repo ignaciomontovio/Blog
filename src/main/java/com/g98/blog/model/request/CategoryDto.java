@@ -6,6 +6,15 @@ public class CategoryDto{
 
 	
 	
+	public CategoryDto() {
+		super();
+	}
+
+	public CategoryDto(String name) {
+		super();
+		this.name = name;
+	}
+
 	public String getName() {
 		return name;
 	}
