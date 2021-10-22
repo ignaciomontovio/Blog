@@ -17,13 +17,21 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(name = "email")
+	@Column(name = "USERNAME")
+	private String username;
+	@Column(name = "EMAIL")
 	private String email;
-	@Column(name = "password")
+	@Column(name = "PASSWORD")
 	private String password;
 	
 	
 	
+	public User(String username, String password, String email) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.email = email;
+	}
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -49,6 +57,12 @@ public class User {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	
 }

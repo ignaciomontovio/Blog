@@ -7,5 +7,5 @@ import com.g98.blog.model.User;
 
 @Repository
 public interface IUserRepo extends JpaRepository<User,Long>{
-
+	User findByUsername(String username);
 }
